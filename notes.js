@@ -16,6 +16,7 @@ Aaron.then((result)=> {
 */
 
 //REST API
+/*
 const URL = `https//api.quotable.io/random`
 
 async function getData(URL) {
@@ -34,3 +35,14 @@ async function getData(URL) {
     }
 }
 getData(URL);
+*/
+
+async function getData(){
+    let res = await fetch(
+        "https://api.themoviedb.org/3/movie/top_rated?api_key=d48eb5d3a4d59bbbef34cda51f943&page=1"
+    )
+    let data = await res.json();
+    console.log(data);
+    data.results.forEach((movie));
+}
+getData();
