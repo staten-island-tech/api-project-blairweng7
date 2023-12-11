@@ -17,8 +17,25 @@ async function getData(URL) {
     }
 }
 getData(URL);
+
+
+async function getData(){
+    let res = await fetch(
+        "https://api.themoviedb.org/3/movie/top_rated?api_key=d48eb5d3a4d59bbbef34cda51f943&page=1"
+    )
+    let data = await res.json();
+    console.log(data);
+    data.results.forEach((movie));
+}
+getData();
 */
 
-const URL = `https://ktor-barbie-api.herokuapp.com/api/v1/barbies`
 
-console.log(fetch(URL))
+async function getData(){
+    let res = await fetch(
+        "https://collectionapi.metmuseum.org/public/collection/v1/objects"
+    )
+    let data = await res.json();
+    console.log(data)
+}
+getData();
