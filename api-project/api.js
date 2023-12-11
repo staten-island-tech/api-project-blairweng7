@@ -19,6 +19,6 @@ async function getData(URL) {
 getData(URL);
 */
 
-const URL = `https://collectionapi.metmuseum.org/public/collection/v1/objects`
+const URL = `https://ktor-barbie-api.herokuapp.com/api/v1/barbies`
 
 console.log(fetch(URL))
