@@ -37,5 +37,6 @@ async function getData(){
     )
     let data = await res.json();
     console.log(data)
+    data.results.forEach((Object)=> console.log(objectID))
 }
 getData();
