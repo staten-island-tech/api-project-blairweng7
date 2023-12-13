@@ -33,10 +33,9 @@ getData();
 
 async function getData(){
     let res = await fetch(
-        "https://collectionapi.metmuseum.org/public/collection/v1/objects"
+        "https://api.fbi.gov/wanted/v1/list"
     )
     let data = await res.json();
-    console.log(data)
-    data.results.forEach((Object)=> console.log(objectID))
+    console.log(data.Array)
 }
 getData();
