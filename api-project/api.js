@@ -36,6 +36,6 @@ async function getData(){
         "https://api.fbi.gov/wanted/v1/list"
     )
     let data = await res.json();
-    console.log(data.Array)
+    console.log(data)
 }
 getData();
