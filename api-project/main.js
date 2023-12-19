@@ -22,3 +22,9 @@ document.querySelector('#app').innerHTML = `
 `
 
 setupCounter(document.querySelector('#counter'))
+
+function addCard (arr){
+  arr.forEach((card)=> 
+  DOMSelectors.container.insertAdjacentHTML("afterend",))
+  `div class="`
+}
