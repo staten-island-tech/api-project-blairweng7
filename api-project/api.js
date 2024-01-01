@@ -41,6 +41,6 @@ async function getData(){
 getData();
 
 
-Array.forEach(element => {
+Array.forEach(subjects => {
     
 });
