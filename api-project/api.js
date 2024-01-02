@@ -39,8 +39,11 @@ async function getData(){
     console.log(data)
 }
 getData();
+const arr = getData
 
+arr.forEach(getData => {
+    cards = getData.aliases.value
+    for (i = 0, i < items.length, i++){
 
-Array.forEach(subjects => {
-    
-});
+    };
+})
