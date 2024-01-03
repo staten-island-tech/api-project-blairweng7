@@ -29,22 +29,16 @@ async function getData(){
 }
 getData();
 */
-import { DOMSelectors } from "./dom";
 
 const API =  "https://api.fbi.gov/wanted/v1/list"
 async function getData(API){
-    try {let res = await fetch(API)
+    let res = await fetch(API)
     let data = await res.json();
     console.log(data)
-    
-} catch(error){
-    console.log(error)
-}
-}
+    createCard();
+} 
 getData(API);
 
-document.querySelector.name.textContent = getData.aliases;
 function createCard(){
     
 }
-
