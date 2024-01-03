@@ -30,6 +30,7 @@ async function getData(){
 getData();
 */
 import { DOMSelectors } from "./dom";
+
 const API =  "https://api.fbi.gov/wanted/v1/list"
 async function getData(API){
     try {let res = await fetch(API)
