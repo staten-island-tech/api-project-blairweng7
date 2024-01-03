@@ -29,21 +29,21 @@ async function getData(){
 }
 getData();
 */
-
-
-async function getData(){
-    let res = await fetch(
-        "https://api.fbi.gov/wanted/v1/list"
-    )
+import { DOMSelectors } from "./dom";
+const API =  "https://api.fbi.gov/wanted/v1/list"
+async function getData(API){
+    try {let res = await fetch(API)
     let data = await res.json();
     console.log(data)
+    
+} catch(error){
+    console.log(error)
 }
-getData();
-const arr = getData
+}
+getData(API);
 
-arr.forEach(getData => {
-    cards = getData.aliases.value
-    for (i = 0, i < items.length, i++){
+document.querySelector.name.textContent = getData.aliases;
+function createCard(){
+    
+}
 
-    };
-})
