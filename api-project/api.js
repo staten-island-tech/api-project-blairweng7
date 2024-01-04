@@ -30,30 +30,60 @@ async function getData(){
 getData();
 */
 
+// const API =  "https://api.fbi.gov/wanted/v1/list"
+// async function getData(API){
+//     let res = await fetch(API)
+//     let data = await res.json();
+//     try {console.log(data);
+//         if (response.status !=200){
+//             throw new Error(response.statusText);
+//         }
+//     }
+//     catch (error){
+//         alert("Oh that's not")
+//     }
+//     createCard(data);
+// } 
+// getData(API);
+
+// function createCard(data){
+//     data.forEach((Objects)=> {
+//         DOMSelectors.container.insertAdjacentHTML("afterend",
+//         `
+//         <div class="card">
+//         <h1 class="name"> ${Objects.title}</h1>
+//         </div>
+//         `
+//         )
+//     })
+// }
+
+import { DOMSelectors } from "./dom";
 const API =  "https://api.fbi.gov/wanted/v1/list"
-async function getData(API){
-    let res = await fetch(API)
-    let data = await res.json();
-    try {console.log(data);
+
+async function getData(){
+    try {
+        const response = await fetch(API);
         if (response.status !=200){
             throw new Error(response.statusText);
         }
+        console.log(response);
+        const data = await response.json();
+        console.log(data);
+    } catch (error){
+        console.log(error)
     }
-    catch (error){
-        alert("Oh that's not")
-    }
-    createCard(data);
-} 
+}
 getData(API);
+function Search(){
+DOMSelectors.form.addEventListener("submit", function (event) {
+    event.preventDefault();
+    addCard();
+    DOMSelectors.search.value
+})    
+}
 
-function createCard(data){
-    data.forEach((Objects)=> {
-        DOMSelectors.container.insertAdjacentHTML("afterend",
-        `
-        <div class="card">
-        <h1 class="name"> ${Objects.title}</h1>
-        </div>
-        `
-        )
-    })
+
+function addCard(){
+
 }

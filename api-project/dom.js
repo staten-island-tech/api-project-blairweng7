@@ -1,6 +1,8 @@
 const DOMSelectors ={
-    container: document.getElementById("container"),
+    container: document.querySelector("container"),
     name: document.querySelector(".name"),
-    age: document.querySelector(".age")
+    age: document.querySelector(".age"),
+    form: document.querySelector("#form"),
+    search: document.querySelector("#Search")
 }
 export { DOMSelectors };
