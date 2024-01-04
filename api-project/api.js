@@ -34,11 +34,26 @@ const API =  "https://api.fbi.gov/wanted/v1/list"
 async function getData(API){
     let res = await fetch(API)
     let data = await res.json();
-    console.log(data)
-    createCard();
+    try {console.log(data);
+        if (response.status !=200){
+            throw new Error(response.statusText);
+        }
+    }
+    catch (error){
+        alert("Oh that's not")
+    }
+    createCard(data);
 } 
 getData(API);
 
-function createCard(){
-    
+function createCard(data){
+    data.forEach((Objects)=> {
+        DOMSelectors.container.insertAdjacentHTML("afterend",
+        `
+        <div class="card">
+        <h1 class="name"> ${Objects.title}</h1>
+        </div>
+        `
+        )
+    })
 }
