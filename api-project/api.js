@@ -70,20 +70,32 @@ async function getData(){
         console.log(response);
         const data = await response.json();
         console.log(data);
+        addCards(data.items);
+
     } catch (error){
         console.log(error)
     }
+   
 }
 getData(API);
 function Search(){
 DOMSelectors.form.addEventListener("submit", function (event) {
     event.preventDefault();
-    addCard();
+    addCards();
     DOMSelectors.search.value
 })    
 }
 
 
-function addCard(){
-
-}
+function addCards (arr){
+    arr.forEach((items) => {
+      DOMSelectors.container.insertAdjacentHTML("afterend", 
+      `
+      <div class="card">
+      <h2 class="name"> ${items.title}</h2>
+      <h2 class="description"> ${items.description}</h2>
+      <h2 class="dob"> ${items.date_of_birth_used}</h2>
+      <h2 class= "gender"> ${items.sex}</h2>
+    </div>
+      `
+  )})};
