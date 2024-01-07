@@ -59,6 +59,7 @@ getData();
 // }
 
 import { DOMSelectors } from "./dom";
+
 const API =  "https://api.fbi.gov/wanted/v1/list"
 
 async function getData(){
@@ -93,9 +94,10 @@ function addCards (arr){
       `
       <div class="card">
       <h2 class="name"> ${items.title}</h2>
-      <h2 class="description"> ${items.description}</h2>
-      <h2 class="dob"> ${items.date_of_birth_used}</h2>
-      <h2 class= "gender"> ${items.sex}</h2>
+      <img src="${items.images.object}" alt="" class="images">
+      <h3 class="description"> ${items.description}</h3>
+      <h3 class="dob"> ${items.date_of_birth_used}</h3>
+      <h3 class= "gender"> ${items.sex}</h3>
     </div>
       `
   )})};
