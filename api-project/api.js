@@ -101,3 +101,13 @@ function addCards (arr){
     </div>
       `
   )})};
+
+  function removeCards(){
+    const clear = document.getElementById("container");
+    clear.innerHTML = ""
+  };
+
+  DOMSelectors.form.addEventListener("click", function(event){
+    event.preventDefault();
+    removeCards();
+  })
