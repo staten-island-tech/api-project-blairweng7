@@ -59,12 +59,8 @@ function addCards (arr){
             clearFields();
           }catch(error){
             console.log(error);
-            `<div class ="error>
-            <h2 class="error-message">Error</h2>
-            </div>`
           }
         
-       
         clearCards();
         clearFields();
     }  
