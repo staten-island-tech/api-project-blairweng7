@@ -16,6 +16,8 @@ async function getData(url){
 
     } catch (error){
         console.log(error)
+        if (error.message === 'Error');
+        errorMessage('Error 404: Failed to Load Resource')
     }
    
 }
@@ -47,6 +49,10 @@ function addCards (arr){
     DOMSelectors.input.value = '';
     }
   
+    function errorMessage(message){
+        alert(message);
+    }
+
   function search(){
     DOMSelectors.form.addEventListener("submit", async function(event){
       event.preventDefault();
@@ -57,7 +63,9 @@ function addCards (arr){
             await getData(url);
             clearFields();
           }catch(error){
-            console.log("Error during search:", error);
+            console.log(error);
+            if (error.message === "Error");
+        errorMessage('Person not Found. Please try again.')
           }
         
         clearCards();
