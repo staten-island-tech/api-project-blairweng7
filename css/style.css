@@ -26,10 +26,10 @@ body,
 
 /*Text Size*/
     --h1: 10rem;
-    --h2: 2.5rem;
+    --h2: 2rem;
     --h3: 2rem;
     --h4: 2.25rem;
-    --h5: 1.5rem;
+    --h5: 1rem;
     --h6: .8rem;
 }
 
@@ -44,12 +44,7 @@ body {
     margin: 1rem auto;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-.app {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-}
+
 
 h1 {
     font-size: var(--h1);
@@ -87,7 +82,7 @@ h6 {
 }
 .card {
     height: 70vh;
-    width: 30vw;
+    width: 25vw;
     display: flex;
     flex-direction: column;
     justify-items: center;
@@ -100,7 +95,7 @@ h6 {
     transform: scale(1.1);
 }
 .card-img{
-    height: 75%;
+    height: 60%;
     width: 100%;
     border-radius: 1rem;
     object-fit: contain;
@@ -124,6 +119,7 @@ h6 {
     width: auto;
     margin: 1rem, auto;
     border-radius: 1rem;
+    font-size: var(--h3);
 }
 .description{
     object-fit: contain;

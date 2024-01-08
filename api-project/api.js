@@ -6,7 +6,7 @@ const API =  "https://api.fbi.gov/wanted/v1/list";
 
 async function getData(url){
     try {
-        const response = await fetch(API);
+        const response = await fetch(url);
         if (response.status !=200){
             throw new Error(response.statusText);
         }
@@ -24,8 +24,9 @@ getData(API);
 //creates cards
 
 function addCards (arr){
+    DOMSelectors.container.innerHTML= ' ';
     arr.forEach((items) => {
-      DOMSelectors.container.insertAdjacentHTML("afterend", 
+      DOMSelectors.container.insertAdjacentHTML("beforeend", 
       `
       <div class="card">
       <h2 class="name"> ${items.title}</h2>
@@ -43,31 +44,31 @@ function addCards (arr){
     DOMSelectors.container.innerHTML='';
   }
   function clearFields(){
-    DOMSelectors.form.value = '';
+    DOMSelectors.person.value = '';
     }
   
   function search(){
     DOMSelectors.form.addEventListener("submit", async function(event){
       event.preventDefault();
-      const searchInput = DOMSelectors.person.value;
+      const searchInput = DOMSelectors.input.value;
       if(searchInput){
-        const url = API + searchInput.toLowerCase();
-        {
+        const url = `${API}/${searchInput.toLowerCase()}`;
+        
           try{
-            const response = await fetch(url)
-            const data = await response.json();
-            console.log(data);
-            addCards(data.items);
+            await getData(url);
+            clearFields();
           }catch(error){
             console.log(error);
+            `<div class ="error>
+            <h2 class="error-message">Error</h2>
+            </div>`
           }
-        }
+        
        
         clearCards();
         clearFields();
-      }
-      
-    })
+    }  
+    });
   }
   search()
   
