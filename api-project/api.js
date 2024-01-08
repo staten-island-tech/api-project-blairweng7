@@ -44,7 +44,7 @@ function addCards (arr){
     DOMSelectors.container.innerHTML='';
   }
   function clearFields(){
-    DOMSelectors.person.value = '';
+    DOMSelectors.input.value = '';
     }
   
   function search(){
@@ -52,17 +52,16 @@ function addCards (arr){
       event.preventDefault();
       const searchInput = DOMSelectors.input.value;
       if(searchInput){
-        const url = `${API}/${searchInput.toLowerCase()}`;
-        
+        const url = `${API} + ${searchInput.toLowerCase()}`;
           try{
             await getData(url);
             clearFields();
           }catch(error){
-            console.log(error);
+            console.log("Error during search:", error);
           }
         
         clearCards();
-        clearFields();
+
     }  
     });
   }
