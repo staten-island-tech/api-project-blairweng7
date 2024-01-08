@@ -88,13 +88,14 @@ DOMSelectors.form.addEventListener("submit", function (event) {
 }
 
 
+
 function addCards (arr){
     arr.forEach((items) => {
       DOMSelectors.container.insertAdjacentHTML("afterend", 
       `
       <div class="card">
       <h2 class="name"> ${items.title}</h2>
-      <img src="${items.images.object}" alt="" class="images">
+      <img class="images" src="${items.images[0].original}" alt="">
       <h3 class="description"> ${items.description}</h3>
       <h3 class="dob"> ${items.date_of_birth_used}</h3>
       <h3 class= "gender"> ${items.sex}</h3>
