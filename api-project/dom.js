@@ -1,6 +1,6 @@
 const DOMSelectors ={
     container: document.getElementById("container"),
-    input: document.querySelector("#People"),
+    input: document.getElementById("People"),
     form: document.getElementById("form"),
 };  
 export { DOMSelectors };

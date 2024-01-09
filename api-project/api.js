@@ -2,11 +2,11 @@ import { DOMSelectors } from "./dom";
 import '../css/style.css';
 
 //get data
-const API =  "https://api.fbi.gov/wanted/v1/list";
+const API =  "https://api.fbi.gov/@wanted?pageSize=20&page=1&sort_on=modified&sort_order=desc";
 
-async function getData(url){
+async function getData(API){
     try {
-        const response = await fetch(url);
+        const response = await fetch(API);
         if (response.status !=200){
             throw new Error(response.statusText);
         }
@@ -62,6 +62,7 @@ function addCards (arr){
           try{
             await getData(url);
             clearFields();
+            addCards(url);
           }catch(error){
             console.log(error);
             if (error.message === "Error");
@@ -69,7 +70,6 @@ function addCards (arr){
           }
         
         clearCards();
-
     }  
     });
   }
