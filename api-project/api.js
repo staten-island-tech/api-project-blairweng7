@@ -25,7 +25,7 @@ getData(API);
 
 //creates cards
 
-function addCards (arr){
+function addCards(arr){
     DOMSelectors.container.innerHTML= ' ';
     arr.forEach((items) => {
       DOMSelectors.container.insertAdjacentHTML("beforeend", 
@@ -54,9 +54,8 @@ function addCards (arr){
         alert(message);
     }
 
-const URL2 = "https://api.fbi.gov/@wanted-person";
 function oneCard(){
-  const inputName = DOMSelectors.input.value;
+  const inputName = DOMSelectors.input.value.toLowerCase();
   let URL2 = `https://api.fbi.gov/@wanted-person/${inputName}`;
   console.log(URL2)
   addCards(URL2)
@@ -66,7 +65,9 @@ DOMSelectors.submit.addEventListener("click", function(){
   event.preventDefault();
   clearCards();
   oneCard();
+  clearFields
 })
+
 
   // function search(){
   //   DOMSelectors.form.addEventListener("submit", async function(event){
