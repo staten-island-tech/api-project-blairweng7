@@ -42,6 +42,36 @@ function addCards(arr){
   );
 });
 }
+function addCard(crim){
+  DOMSelectors.container.innerHTML= ' ';
+  
+    DOMSelectors.container.insertAdjacentHTML("beforeend", 
+    `
+    <div class="card">
+    ${crim}
+  </div>
+    `)
+
+}
+
+
+async function getData2(API){
+  try {
+      const response = await fetch(API);
+      if (response.status !=200){
+          throw new Error(response.statusText);
+      }
+      const data = await response.json();
+      console.log(data);
+      addCard(data);
+
+  } catch (error){
+      console.log(error)
+      if (error.message === 'Error');
+      errorMessage('Error 404: Failed to Load Resource')
+  }
+ 
+}
 
   function clearCards() {  
     DOMSelectors.container.innerHTML='';
@@ -56,9 +86,10 @@ function addCards(arr){
 
 function oneCard(){
   const inputName = DOMSelectors.input.value.toLowerCase();
+ 
   let URL2 = `https://api.fbi.gov/@wanted-person/${inputName}`;
   console.log(URL2)
-  addCards(URL2)
+  getData2(URL2)
 }
 
 DOMSelectors.submit.addEventListener("click", function(){
