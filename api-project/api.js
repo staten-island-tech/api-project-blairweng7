@@ -34,9 +34,9 @@ function addCards(arr){
       <h2 class="name"> ${items.title}</h2>
       <img class="card-img" src="${items.images[0].original}" alt="">
       <h5 class="description" > ${items.description}</h5>
-      <h5 class="dob"> ${items.date_of_birth_used}</h5>
+      <h5 class="dob"> DOB: ${items.date_of_birth_used}</h5>
       <h5 class="gender"> ${items.sex}</h5>
-      <h5 class ="uid"> ${items.uid}</h5>
+      <h5 class ="uid"> ID: ${items.uid}</h5>
     </div>
       `
   );
@@ -48,7 +48,12 @@ function addCard(crim){
     DOMSelectors.container.insertAdjacentHTML("beforeend", 
     `
     <div class="card">
-    ${crim}
+    <h2 class="name"> ${crim.title}</h2>
+      <img class="card-img" src="${crim.images[0].original}" alt="">
+      <h5 class="description" > ${crim.description}</h5>
+      <h5 class="dob"> DOB: ${crim.date_of_birth_used}</h5>
+      <h5 class="gender"> ${crim.sex}</h5>
+      <h5 class ="uid"> ${crim.uid}</h5>
   </div>
     `)
 
